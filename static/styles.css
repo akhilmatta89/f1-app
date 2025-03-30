@@ -1,0 +1,757 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: right;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Button Container */
+.button-container {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+/* General Styles for Add and Update Driver Pages */
+body.add-driver-page, body.update-driver-page {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333; /* Dark gray for navbar */
+    padding: 10px;
+    text-align: right;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.navbar ul li a {
+    color: #fff; /* White text for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #ff0000; /* Red text on hover */
+}
+
+/* Add and Update Driver Containers */
+.add-driver-container, .update-driver-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 80px auto 20px; /* Adjusted margin to account for fixed navbar */
+    padding: 20px;
+    background-color: #222; /* Dark gray for form container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
+
+.add-driver-container h1, .update-driver-container h1 {
+    color: #ff0000; /* Red heading */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ff0000; /* Red labels */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff0000; /* Red border */
+    border-radius: 5px;
+    background-color: #333; /* Dark gray input background */
+    color: #fff; /* White text */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff4444; /* Lighter red on focus */
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff0000; /* Red button */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Output Section Styling */
+.comparison-results {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333; /* Dark gray background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
+
+.comparison-results h2 {
+    color: #ff0000; /* Red heading */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ff0000; /* Red border */
+}
+
+table th {
+    background-color: #444; /* Slightly lighter gray for table headers */
+    color: #ff0000; /* Red text */
+}
+
+table td {
+    background-color: #555; /* Even lighter gray for table cells */
+    color: #fff; /* White text */
+}
+
+/* Error Message Styling */
+.error-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff4444; /* Light red background */
+    color: #fff; /* White text */
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* General Styles for Compare Drivers Page */
+body.compare-drivers-page {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Compare Drivers Container */
+.compare-drivers-container {
+    max-width: 800px; /* Slightly wider for comparison table */
+    width: 100%;
+    margin: 80px auto 20px; /* Adjusted margin to account for fixed navbar */
+    padding: 20px;
+    background-color: #222; /* Dark gray for form container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
+
+.compare-drivers-container h1 {
+    color: #ff0000; /* Red heading */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ff0000; /* Red labels */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff0000; /* Red border */
+    border-radius: 5px;
+    background-color: #333; /* Dark gray input background */
+    color: #fff; /* White text */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff4444; /* Lighter red on focus */
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff0000; /* Red button */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Output Section Styling */
+.comparison-results {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333; /* Dark gray background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
+
+.comparison-results h2 {
+    color: #ff0000; /* Red heading */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ff0000; /* Red border */
+}
+
+table th {
+    background-color: #444; /* Slightly lighter gray for table headers */
+    color: #ff0000; /* Red text */
+}
+
+table td {
+    background-color: #555; /* Even lighter gray for table cells */
+    color: #fff; /* White text */
+}
+
+/* Error Message Styling */
+.error-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff4444; /* Light red background */
+    color: #fff; /* White text */
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* About Page with Background Image and Light Black Overlay */
+body.about-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('./images/blur_background_for_homepage.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* This is crucial */
+    text-align: center;
+}
+
+.about-container {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(34, 34, 34, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    /* text-align: center; */ /* Optional if body has it */
+}
+
+/* Keep all your existing text styles */
+.about-container h1 {
+    color: #ff0000;
+    margin-bottom: 20px;
+}
+
+.about-container p,
+.about-container ul li {
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Red bullet points */
+.about-container ul li::before {
+    content: "•";
+    color: #ff0000;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Links */
+.about-container a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.about-container a:hover {
+    text-decoration: underline;
+}
+/* ===== LOGIN PAGE BACKGROUND ===== */
+body.login-page {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('./images/blur_background_for_homepage.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif; /* Keep your font */
+}
+
+.auth-page_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); /* Account for navbar height */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-form-container {
+    background-color: rgba(34, 34, 34, 0.9); /* Semi-transparent dark background */
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Keep your red shadow */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+
+
+/* Keep all your existing login form styles below */
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333; /* Dark gray for navbar */
+    padding: 10px;
+    text-align: right;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.navbar ul li a {
+    color: #fff; /* White text for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #ff0000; /* Red text on hover */
+}
+
+/* Login Form Container */
+.auth-page_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 60px; /* Account for fixed navbar */
+}
+
+.login-form-container {
+    background-color: #222; /* Dark gray for form container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red shadow */
+    width: 300px;
+    text-align: center;
+}
+
+.login-form h2 {
+    color: #ff0000; /* Red heading */
+    margin-bottom: 20px;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff0000; /* Red border */
+    border-radius: 5px;
+    background-color: #333; /* Dark gray input background */
+    color: #fff; /* White text */
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ff4444; /* Lighter red on focus */
+}
+
+/* Error Messages */
+.error-msg {
+    color: #ff0000; /* Red error messages */
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff0000; /* Red button */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.login-btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Google Sign-In Button */
+.google-login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.google-login-btn:hover {
+    background-color: #f1f1f1; /* Light gray on hover */
+}
+
+.google-btn-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Divider */
+.alt-signin-divider {
+    color: #fff; /* White text */
+    margin: 10px 0;
+}
+
+/* Sign Up and Forgot Password Links */
+.signup-link-container {
+    margin-top: 10px;
+}
+
+.signup-link-container a {
+    color: #ff0000; /* Red links */
+    text-decoration: none;
+}
+
+.signup-link-container a:hover {
+    text-decoration: underline;
+}
+
+/* General Styles for Home Page */
+body.home-page {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333; /* Dark gray for navbar */
+    padding: 10px;
+    text-align: right;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.navbar ul li a {
+    color: #fff; /* White text for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #ff0000; /* Red text on hover */
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 80px auto 20px; /* Adjusted margin to account for fixed navbar */
+    padding: 20px;
+    background-color: #222; /* Dark gray for container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red shadow */
+    text-align: center;
+}
+
+.container h1 {
+    color: #ff0000; /* Red heading */
+    margin-bottom: 20px;
+}
+
+/* Button Container */
+.button-container {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ff0000; /* Red button */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Login Prompt for Non-Logged-In Users */
+.login-prompt {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333; /* Dark gray background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
+
+.login-prompt p {
+    color: #fff; /* White text */
+    margin-bottom: 10px;
+}
+
+.login-prompt .login-link {
+    color: #ff0000; /* Red link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-prompt .login-link:hover {
+    text-decoration: underline;
+}
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Pushes logo left and links right */
+    align-items: center;
+    background-color: #000;
+    padding: 10px 11px;
+}
+
+/* Logo styles */
+.logo-container img {
+    height: 40px; /* Adjust size as needed */
+}
+
+/* Navigation links */
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li {
+    margin-left: 20px; /* Space between links */
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links ul li a:hover {
+    color: #e10600; /* F1 red hover effect */
+}
+
+/* Full page background with light black overlay */
+.home-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), /* Light black overlay */
+        url('./images/blur_background_for_homepage.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white; /* White text for better contrast */
+}
+
+/* Navbar - now darker to stand out */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker navbar */
+}
+
+/* Content container - dark semi-transparent */
+.container {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark translucent background */
+    color: white; /* White text */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+/* Buttons - F1 red stands out */
+.button {
+    background-color: #e10600;
+    color: white;
+}
+
+/* Links - make them stand out */
+.nav-links ul li a {
+    color: white;
+}
+
+.login-link {
+    color: #e10600; /* Keep login link red */
+}

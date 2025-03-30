@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+</head>
+<body class="logout-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+    <div class="logo-container">
+        <a href="/">
+            <img src="{{ url_for('static',filename='images/main_f1_logo.png')}}" alt="F1 Logo">
+        </a>
+    </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Logout Content -->
+    <div class="logout-container">
+        <h1>Logout</h1>
+        <p>Are you sure you want to log out?</p>
+        <button id="logout-button" class="submit-button">Logout</button>
+    </div>
+
+    <!-- Firebase Authentication Script -->
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDFKQW0iWSOV73S8AdgRb3l3eFV9SDutMY",
+            authDomain: "flask-demo-25680.firebaseapp.com",
+            projectId: "flask-demo-25680",
+            storageBucket: "flask-demo-25680.firebasestorage.app",
+            messagingSenderId: "30541412826",
+            appId: "1:30541412826:web:e667c2b8064312880ae8e3",
+            measurementId: "G-WX75N6H7Q5"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Handle logout button click
+        document.getElementById('logout-button').addEventListener('click', () => {
+            auth.signOut()
+                .then(() => {
+                    // Clear Flask session
+                    fetch('/clear_session', {
+                        method: 'POST',
+                    })
+                    .then(() => {
+                        // Redirect to home page after successful logout
+                        window.location.href = '/';
+                    });
+                })
+                .catch((error) => {
+                    alert(error.message); // Show error message
+                });
+        });
+    </script>
+</body>
+</html>

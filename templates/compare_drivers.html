@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Drivers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="compare-drivers-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+    <div class="logo-container">
+        <a href="/">
+            <img src="{{ url_for('static',filename='images/main_f1_logo.png')}}" alt="F1 Logo">
+        </a>
+    </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if 'user' in session %}
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Compare Drivers Form -->
+    <div class="compare-drivers-container">
+        <h1>Compare Drivers</h1>
+        <form action="/compare_drivers" method="POST">
+            <div class="form-group">
+                <label for="driver1_id">Driver 1 ID:</label>
+                <input type="text" id="driver1_id" name="driver1_id" required>
+            </div>
+
+            <div class="form-group">
+                <label for="driver2_id">Driver 2 ID:</label>
+                <input type="text" id="driver2_id" name="driver2_id" required>
+            </div>
+
+            <button type="submit" class="submit-button">Compare Drivers</button>
+        </form>
+
+        <!-- Output Section -->
+        {% if driver1 and driver2 %}
+        <div class="comparison-results">
+            <h2>Comparison Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Driver Stats</th>
+                        <th>Driver-1 Name</th>
+                        <th>Driver-2 Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td>Driver Name</td>
+                        <td>{{ driver1.name }}</td>
+                        <td>{{ driver2.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>{{ driver1.age }}</td>
+                        <td>{{ driver2.age }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Pole Positions</td>
+                        <td>{{ driver1.total_pole_positions }}</td>
+                        <td>{{ driver2.total_pole_positions }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Race Wins</td>
+                        <td>{{ driver1.total_race_wins }}</td>
+                        <td>{{ driver2.total_race_wins }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Points Scored</td>
+                        <td>{{ driver1.total_points_scored }}</td>
+                        <td>{{ driver2.total_points_scored }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total World Titles</td>
+                        <td>{{ driver1.total_world_titles }}</td>
+                        <td>{{ driver2.total_world_titles }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Fastest Laps</td>
+                        <td>{{ driver1.total_fastest_laps }}</td>
+                        <td>{{ driver2.total_fastest_laps }}</td>
+                    </tr>
+                    <tr>
+                        <td>Team</td>
+                        <td>{{ driver1.team }}</td>
+                        <td>{{ driver2.team }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {% elif error %}
+        <div class="error-message">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
