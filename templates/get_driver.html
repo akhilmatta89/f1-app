@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Drivers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="compare-drivers-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+    <div class="logo-container">
+        <a href="/">
+            <img src="{{ url_for('static',filename='images/main_f1_logo.png')}}" alt="F1 Logo">
+        </a>
+    </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if 'user' in session %}
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Compare Drivers Form -->
+    <div class="fetch-drivers-container">
+        <h1>Compare Drivers</h1>
+        <form action="/get_driver" method="POST">
+            <div class="form-group">
+                <label for="driver_id">Driver ID:</label>
+                <input type="text" id="driver_id" name="driver_id" required>
+            </div>
+
+            <button type="submit" class="submit-button">Fetch</button>
+        </form>
+
+        <!-- Output Section -->
+        {% if driver %}
+        <div class="Driver-results">
+            <h2>Driver Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Driver Stat</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Driver Name</td>
+                        <td>{{ driver.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>{{ driver.age }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Pole Positions</td>
+                        <td>{{ driver.total_pole_positions }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Race Wins</td>
+                        <td>{{ driver.total_race_wins }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Points Scored</td>
+                        <td>{{ driver.total_points_scored }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total World Titles</td>
+                        <td>{{ driver.total_world_titles }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Fastest Laps</td>
+                        <td>{{ driver.total_fastest_laps }}</td>
+                    </tr>
+                    <tr>
+                        <td>Team</td>
+                        <td>{{ driver.team }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {% elif error %}
+        <div class="error-message">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Formula 1 Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="about-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+    <div class="logo-container">
+        <a href="/">
+            <img src="{{ url_for('static',filename='images/main_f1_logo.png')}}" alt="F1 Logo">
+        </a>
+    </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if logged_in %}
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Content -->
+    <div class="about-container">
+        <h1>About Formula 1 Management</h1>
+        <p>
+            Formula 1 (F1) is the highest class of international racing for single-seater formula racing cars.
+            It is one of the most prestigious and popular forms of motorsport in the world, featuring cutting-edge
+            technology, high-speed races, and some of the best drivers in history.
+        </p>
+        <p>
+            This app is designed to help you manage and compare Formula 1 drivers and teams. You can:
+        </p>
+        <ul>
+            <li>Add new drivers and teams to the database.</li>
+            <li>Update existing driver and team information.</li>
+            <li>Compare drivers based on their stats like age, race wins, pole positions, and more.</li>
+        </ul>
+        <p>
+            Whether you're a die-hard F1 fan or just getting started, this app is your go-to tool for all things Formula 1!
+        </p>
+        <p><a href="/">Back to Home</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="login-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+    <div class="logo-container">
+        <a href="/">
+            <img src="{{ url_for('static',filename='images/main_f1_logo.png')}}" alt="F1 Logo">
+        </a>
+    </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="auth-page_container">
+        <div class="login-form-container">
+            <div class="login-form">
+                <h2>Login</h2>
+
+                <!-- Email Input -->
+                <div class="input-group">
+                    <input type="email" id="email-input" name="email" placeholder="Email" required>
+                    <div id="email-error-message" class="error-msg"></div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group">
+                    <input type="password" id="password-input" name="password" placeholder="Password" required>
+                    <div id="password-error-message" class="error-msg"></div>
+                </div>
+
+                <!-- Sign In Button -->
+                <div id="sign-in-btn" class="login-btn">Sign In</div>
+
+                <!-- Divider -->
+                <div class="alt-signin-divider">OR</div>
+
+                <!-- Google Sign-In Button -->
+                <button id="sign-in-with-google-btn" class="google-login-btn">
+                    <img src="{{ url_for('static', filename='images/google-icon.png') }}" alt="Google Sign-in" class="google-btn-logo">
+                    Sign in with Google
+                </button>
+
+                <!-- Google Sign-In Error Message -->
+                <div id="google-signin-error-message" class="error-msg"></div>
+
+                <!-- Sign Up and Forgot Password Links -->
+                <div class="signup-link-container">Don't have an account? <a href="/register">Sign up</a></div>
+                <div class="signup-link-container"><a href="/reset_password">Forgot Password?</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='login-auth.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}" type="module"></script>
+</body>
+</html>

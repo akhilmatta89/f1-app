@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1 Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="home-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+    <!-- Logo on the left -->
+    <div class="logo-container">
+        <a href="/">
+            <img src="{{ url_for('static',filename='images/main_f1_logo.png')}}" alt="F1 Logo">
+        </a>
+    </div>
+
+    <!-- Navigation links on the right -->
+    <div class="nav-links">
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if 'user' in session %}
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
+            <li><a href="/about">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to Formula 1 Management</h1>
+
+        <!-- Buttons for Actions -->
+        <div class="button-container">
+            {% if 'user' in session %}
+                <a href="/add_driver" class="button">Add Driver</a>
+                <a href="/update_driver" class="button">Update Driver</a>
+                <a href="/compare_drivers" class="button">Compare Drivers</a>
+                <a href="/get_driver" class="button">Get Driver Data</a>
+            {% else %}
+                <div class="login-prompt">
+                    <p>Please <a href="/login" class="login-link">log in</a> to access these features.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
