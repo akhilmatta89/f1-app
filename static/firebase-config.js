@@ -1,3 +1,11 @@
+/*
+============================================
+© 2026 Akhil Reddy
+GitHub: https://github.com/akhilmatta89
+LinkedIn: https://www.linkedin.com/in/akhil-reddy-1a0822255
+============================================
+*/
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 import { getAuth, 
          GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";

@@ -140,11 +140,14 @@ body.add-driver-page, body.update-driver-page {
 
 .form-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ff0000; /* Red border */
+    height: 50px;              /* 🔥 fixed height */
+    padding: 0 15px;           /* 🔥 horizontal padding only */
+    border: 1px solid #ff0000;
     border-radius: 5px;
-    background-color: #333; /* Dark gray input background */
-    color: #fff; /* White text */
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
 .form-group input:focus {
@@ -229,6 +232,11 @@ body.compare-drivers-page {
     min-height: 100vh;
 }
 
+body.compare-drivers-page h1 {
+    color: #ff0000;
+    text-align: center;
+    margin-bottom: 20px;
+}
 /* Compare Drivers Container */
 .compare-drivers-container {
     max-width: 800px; /* Slightly wider for comparison table */

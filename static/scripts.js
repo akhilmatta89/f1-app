@@ -1,6 +1,10 @@
-
-
-
+/*
+============================================
+© 2026 Akhil Reddy
+GitHub: https://github.com/akhilmatta89
+LinkedIn: https://www.linkedin.com/in/akhil-reddy-1a0822255
+============================================
+*/
 
 // Toggles the dropdown menu with click
 

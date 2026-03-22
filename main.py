@@ -1,3 +1,10 @@
+# ============================================
+# © 2026 Akhil Reddy. All Rights Reserved.
+# GitHub: https://github.com/akhilmatta89
+# LinkedIn: www.linkedin.com/in/akhil-reddy-1a0822255
+# Project: F1 Driver Management App
+# ============================================
+
 import json
 import os
 
