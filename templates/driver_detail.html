@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Driver Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="home-page">
+
+<div class="container">
+
+    <h1>{{ driver.name }}</h1>
+
+    <p><b>ID:</b> {{ driver_id }}</p>
+    <p><b>Age:</b> {{ driver.age }}</p>
+    <p><b>Team:</b> {{ driver.team }}</p>
+    <p><b>Pole Positions:</b> {{ driver.total_pole_positions }}</p>
+    <p><b>Race Wins:</b> {{ driver.total_race_wins }}</p>
+    <p><b>Points:</b> {{ driver.total_points_scored }}</p>
+    <p><b>World Titles:</b> {{ driver.total_world_titles }}</p>
+    <p><b>Fastest Laps:</b> {{ driver.total_fastest_laps }}</p>
+
+    <div class="button-container">
+        <a href="/" class="button">Back Home</a>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="login-page">
+<nav class="navbar">
+    <div class="logo-container">
+        <a href="/">
+            <img src="{{ url_for('static',filename='images/main_f1_logo.png')}}" alt="F1 Logo">
+        </a>
+    </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+<div class="auth-page_container">
+    <div class="login-form-container">
+        <div class="login-form">
+            <h2>Create Account</h2>
+
+            <div class="input-group">
+                <input type="email" id="email-input" placeholder="Email" required>
+                <div id="email-error-message" class="error-msg"></div>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password-input" placeholder="Password" required>
+                <div id="password-error-message" class="error-msg"></div>
+            </div>
+
+            <button id="create-account-btn" class="login-btn">Create Account</button>
+
+            <div class="alt-signin-divider">OR</div>
+
+            <button id="sign-up-with-google-btn" class="google-login-btn">
+                Sign up with Google
+            </button>
+
+            <div class="signup-link-container">
+                Already have an account? <a href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='login-auth.js') }}" type="module"></script>
+</body>
+</html>

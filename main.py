@@ -84,11 +84,9 @@ def authorize():
     try:
         decoded_token = auth.verify_id_token(token, check_revoked=True, clock_skew_seconds=60)
         session['user'] = decoded_token  # Add user to session
-        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", session)  # Validate token here
         return redirect(url_for('dashboard'))
 
     except:
-        print("####################################")
         return "Unauthorized", 401
 
 # Route to set session after login
@@ -123,6 +121,10 @@ def logout():
     response.set_cookie('session', '', expires=0)  # Optionally clear the session cookie
     return response
 
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
 @app.route('/add_driver_page', methods=['GET', 'POST'])
 def add_driver_page():
     return render_template('add_driver.html')
@@ -135,6 +137,15 @@ def update_driver_page():
 def compare_drivers_page():
     return render_template('compare_drivers.html')
 
+@app.route('/driver_success/<driver_id>')
+def driver_success(driver_id):
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    return render_template('driver_success.html', driver_id=driver_id)
+
+
+
 @app.route('/add_driver', methods=['GET', 'POST'])
 def add_driver():
     # Check if the user is logged in
@@ -143,15 +154,17 @@ def add_driver():
 
     if request.method == 'POST':
         name = request.form.get('name', 'Unknown')
-        age = int(request.form.get('age', 0))  # Default to 0 if not provided
+        age = int(request.form.get('age', 0))
         team = request.form.get('team', 'Unknown')
-        pole_positions = int(request.form.get('pole_positions', 0))
-        race_wins = int(request.form.get('race_wins', 0))
-        points_scored = int(request.form.get('points_scored', 0))
+        pole_positions = int(request.form.get('total_pole_positions', 0))
+        race_wins = int(request.form.get('total_race_wins', 0))
+        points_scored = int(request.form.get('total_points_scored', 0))
         total_world_titles = int(request.form.get('total_world_titles', 0))
         total_fastest_laps = int(request.form.get('total_fastest_laps', 0))
 
-        db.collection('drivers').add({
+        # 🔥 Create document and get ID
+        doc_ref = db.collection('drivers').document()
+        doc_ref.set({
             "name": name,
             "age": age,
             "team": team,
@@ -162,7 +175,10 @@ def add_driver():
             "total_fastest_laps": total_fastest_laps
         })
 
-        return redirect(url_for('home'))
+        driver_id = doc_ref.id
+
+        # 🔥 Redirect to success page with ID
+        return redirect(url_for('driver_success', driver_id=driver_id))
 
     return render_template('add_driver.html')
 
@@ -289,6 +305,19 @@ def get_drivers_data():
         return render_template('get_driver.html', driver=driver_data.to_dict())
 
     return render_template('get_driver.html')
+
+@app.route('/driver/<driver_id>')
+def view_driver(driver_id):
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    doc = db.collection('drivers').document(driver_id).get()
+
+    if not doc.exists:
+        return "Driver not found", 404
+
+    driver = doc.to_dict()
+    return render_template('driver_detail.html', driver=driver, driver_id=driver_id)
 
 
 

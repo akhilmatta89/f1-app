@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver Added</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="home-page">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/main_f1_logo.png') }}" alt="F1 Logo">
+        </div>
+
+        <div class="nav-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/add_driver">Add Driver</a></li>
+                <li><a href="/compare_drivers">Compare</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <h1>Driver Added Successfully 🎉</h1>
+
+        <p style="margin-top: 20px;">
+            Your Driver ID:
+        </p>
+
+        <!-- 🔥 Clickable ID -->
+        <a href="/driver/{{ driver_id }}"
+           style="color:#ff0000; font-size:24px; text-decoration:none;">
+            {{ driver_id }}
+        </a>
+
+        <div class="button-container">
+            <a href="/" class="button">Go Home</a>
+            <a href="/add_driver" class="button">Add Another Driver</a>
+        </div>
+
+    </div>
+
+    <!-- 🔥 Optional auto redirect -->
+    <script>
+        setTimeout(() => {
+            window.location.href = "/";
+        }, 5000);
+    </script>
+
+</body>
+</html>

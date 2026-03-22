@@ -24,45 +24,65 @@
         </ul>
     </nav>
 
-    <!-- Login Form -->
     <div class="auth-page_container">
-        <div class="login-form-container">
-            <div class="login-form">
+
+    <div class="login-form-container">
+        <div class="login-form">
+
+            <!-- LOGIN VIEW -->
+            <div id="login-view">
+
                 <h2>Login</h2>
 
-                <!-- Email Input -->
                 <div class="input-group">
-                    <input type="email" id="email-input" name="email" placeholder="Email" required>
-                    <div id="email-error-message" class="error-msg"></div>
+                    <input type="email" id="email-input" placeholder="Email">
                 </div>
 
-                <!-- Password Input -->
                 <div class="input-group">
-                    <input type="password" id="password-input" name="password" placeholder="Password" required>
-                    <div id="password-error-message" class="error-msg"></div>
+                    <input type="password" id="password-input" placeholder="Password">
                 </div>
 
-                <!-- Sign In Button -->
-                <div id="sign-in-btn" class="login-btn">Sign In</div>
+                <button id="sign-in-btn" class="login-btn">Sign In</button>
 
-                <!-- Divider -->
                 <div class="alt-signin-divider">OR</div>
 
-                <!-- Google Sign-In Button -->
                 <button id="sign-in-with-google-btn" class="google-login-btn">
-                    <img src="{{ url_for('static', filename='images/google-icon.png') }}" alt="Google Sign-in" class="google-btn-logo">
                     Sign in with Google
                 </button>
 
-                <!-- Google Sign-In Error Message -->
-                <div id="google-signin-error-message" class="error-msg"></div>
+                <div class="signup-link-container">
+                    Don't have an account? <a href="/register">Sign up</a>
+                </div>
 
-                <!-- Sign Up and Forgot Password Links -->
-                <div class="signup-link-container">Don't have an account? <a href="/register">Sign up</a></div>
-                <div class="signup-link-container"><a href="/reset_password">Forgot Password?</a></div>
+                <div class="signup-link-container">
+                    <a href="#" id="forgot-password-link">Forgot Password?</a>
+                </div>
+
             </div>
+
+            <!-- RESET VIEW -->
+            <div id="reset-view" style="display:none;">
+
+                <h2>Reset Password</h2>
+
+                <div class="input-group">
+                    <input type="email" id="email-forgot-password" placeholder="Enter your email">
+                </div>
+
+                <button id="forgot-password-btn" class="login-btn">
+                    Send Reset Link
+                </button>
+
+                <div class="signup-link-container">
+                    <a href="#" id="back-to-login">Back to Login</a>
+                </div>
+
+            </div>
+
         </div>
     </div>
+
+</div>
 
     <script src="{{ url_for('static', filename='login-auth.js') }}" type="module"></script>
     <script src="{{ url_for('static', filename='scripts.js') }}" type="module"></script>
