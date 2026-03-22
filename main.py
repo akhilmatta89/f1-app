@@ -1,3 +1,4 @@
+import json
 import os
 
 import firebase_admin
@@ -25,7 +26,9 @@ app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'  # Can be 'Strict', 'Lax', or 'Non
 
 
 # Firebase Admin SDK setup
-cred = credentials.Certificate("firebase-auth.json")
+#cred = credentials.Certificate("firebase-auth.json")
+cred_dict = json.loads(os.getenv("FIREBASE_CREDENTIALS"))
+cred = credentials.Certificate(cred_dict)
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
