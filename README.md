@@ -1,4 +1,4 @@
-# 🏎️ F1 Driver Management App
+# 🏎️ F1-Driver Management App
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
 ![Flask](https://img.shields.io/badge/Flask-Backend-black?logo=flask)
